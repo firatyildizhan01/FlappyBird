@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <ImageView
+        android:id="@+id/imageLacross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginBottom="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212"
+        app:srcCompat="@drawable/ic_lacross" />
+
+    <ImageView
+        android:id="@+id/textStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLacross"
+        app:layout_constraintEnd_toEndOf="@+id/imageLacross"
+        app:layout_constraintStart_toStartOf="@+id/imageLacross"
+        app:layout_constraintTop_toTopOf="@+id/imageLacross"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/ic_start" />
+
+    <ImageView
+        android:id="@+id/boardStroke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLacross"
+        app:layout_constraintEnd_toEndOf="@+id/imageLacross"
+        app:layout_constraintStart_toStartOf="@+id/imageLacross"
+        app:layout_constraintTop_toTopOf="@+id/imageLacross"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/ic________stroke_" />
+
+    <ImageView
+        android:id="@+id/russianStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLacross"
+        app:layout_constraintEnd_toEndOf="@+id/imageLacross"
+        app:layout_constraintStart_toStartOf="@+id/imageLacross"
+        app:layout_constraintTop_toTopOf="@+id/imageLacross"
+        app:layout_constraintVertical_bias="0.624"
+        app:srcCompat="@drawable/ic______" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/aboutLacros"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096"
+        app:srcCompat="@drawable/ic_settings" />
+
+    <ImageView
+        android:id="@+id/russianSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/aboutLacros"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096"
+        app:srcCompat="@drawable/ic_russiansettings" />
+
+
+    <TextView
+        android:id="@+id/aboutLacros"
+        android:layout_width="147dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/century_gothic"
+        android:text="ABOUT LACROSS"
+        android:textColor="#F8E64C"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aboutlacross" />
+
+    <TextView
+        android:id="@+id/russianAboutLacros"
+        android:layout_width="147dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="22dp"
+        android:fontFamily="@font/century_gothic"
+        android:text="Про Лакросс"
+        android:textColor="#F8E64C"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aboutlacross"
+        android:visibility="invisible"/>
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="37dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_ball" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/aboutLacros"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/ic_horizontallacros" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
