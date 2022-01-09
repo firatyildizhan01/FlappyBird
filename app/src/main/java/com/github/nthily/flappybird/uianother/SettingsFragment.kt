@@ -1,10 +1,10 @@
-package com.myproject.sunsetlacross.uianother
+package com.github.nthily.flappybird.uianother
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.myproject.sunsetlacross.R
+import com.github.nthily.flappybird.R
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 var count = 1

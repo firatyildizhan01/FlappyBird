@@ -1,10 +1,10 @@
-package com.myproject.sunsetlacross.uianother
+package com.github.nthily.flappybird.uianother
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.NavHostFragment
-import com.myproject.sunsetlacross.R
+import com.github.nthily.flappybird.R
 
 class baseMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
