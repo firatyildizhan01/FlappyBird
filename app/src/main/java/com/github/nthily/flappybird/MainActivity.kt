@@ -1,6 +1,7 @@
 package com.github.nthily.flappybird
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.Crossfade
@@ -29,33 +30,23 @@ class MainActivity : ComponentActivity() {
     @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContent {
             FlappyBirdTheme {
                 val viewModel = hiltViewModel<UiState>()
                 val game by remember{ mutableStateOf(Game()) }
                 game.restartGame()
 
-                Scaffold(
-                    topBar = {
-                        TopAppBar(
-                            title = {
-                                Text("FlappyBird")
-                            },
-                            actions = {
-                                IconButton(onClick = { if(viewModel.type == 0) viewModel.type = 1  else viewModel.type = 0}) {
-                                    Icon(painterResource(id = R.drawable.image), null)
-                                }
-                            },
-                            backgroundColor = Color(0xFF0079D3)
-                        )
-                    }
-                ){
+
                     GameUI(game)
                 }
             }
         }
     }
-}
+
 
 @ExperimentalAnimationApi
 @Composable
@@ -105,8 +96,8 @@ fun GameUI(game: Game){
 
     Crossfade(targetState = viewModel.type) {
         if(it == 0){
-            Background(R.drawable.bkg)
-        } else Background(R.drawable.bkg2)
+            Background(R.drawable.bg)
+        } else Background(R.drawable.bg)
     }
 
     // 柱子
@@ -124,7 +115,7 @@ fun GameUI(game: Game){
                 contentAlignment = Alignment.TopEnd
             ){
                 Image(
-                    painter = painterResource(id = R.drawable.pipedown),
+                    painter = painterResource(id = R.drawable.uplacross),
                     contentDescription = null,
                     modifier = Modifier
                         .size(width = pipe.width, height = pipe.pipeDownHeight),
@@ -140,7 +131,7 @@ fun GameUI(game: Game){
                 contentAlignment = Alignment.BottomEnd
             ){
                 Image(
-                    painter = painterResource(id = R.drawable.pipeup),
+                    painter = painterResource(id = R.drawable.downlacross),
                     contentDescription = null,
                     modifier = Modifier
                         .size(width = pipe.width, height = pipe.pipeUpHeight),

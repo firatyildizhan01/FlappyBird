@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.github.nthily.flappybird.R
 import kotlinx.android.synthetic.main.fragment_main_menu.*
+import android.content.Intent
+import com.github.nthily.flappybird.MainActivity
+
 
 class MainMenuFragment : Fragment(R.layout.fragment_main_menu)  {
 
@@ -34,6 +37,11 @@ class MainMenuFragment : Fragment(R.layout.fragment_main_menu)  {
             findNavController().navigate(
                 R.id.action_mainMenuFragment_to_aboutFragment
             )
+        }
+        textStart.setOnClickListener {
+            val intent = Intent()
+            intent.setClass(activity!!, MainActivity::class.java)
+            activity!!.startActivity(intent)
         }
 
 

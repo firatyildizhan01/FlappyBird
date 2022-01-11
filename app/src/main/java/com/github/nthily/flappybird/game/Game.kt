@@ -40,22 +40,22 @@ class Game {
             }
 
             pipe.forEachIndexed { index, pipe ->
-                pipe.pipeDownX -= 2f
-                pipe.pipeUpX -= 2f
+                pipe.pipeDownX -= 5f
+                pipe.pipeUpX -= 5f
 
                 // Up layer detection
-                if(pipe.pipeDownHeight.value >= gameObject.screenHeight.value / 2 + bird.y.dp.value &&
-                    (-pipe.pipeDownX.dp) + pipe.width >= gameObject.screenWidth / 2 - bird.width / 2 &&
-                    (-pipe.pipeDownX.dp) <= gameObject.screenWidth / 2 + bird.width / 2
-                ){
+                if (pipe.pipeDownHeight.value >= gameObject.screenHeight.value / 2 + bird.y.dp.value + 40 &&
+                    (-pipe.pipeDownX.dp) + pipe.width >= gameObject.screenWidth / 2 - bird.width + 40.dp / 2 &&
+                    (-pipe.pipeDownX.dp) <= gameObject.screenWidth / 2 + bird.width + 40.dp / 2
+                ) {
                     gameState = GameState.Over
                 }
 
                 // Down layer detection
-                if(pipe.pipeUpHeight.value >= gameObject.screenHeight.value / 2 - bird.y.dp.value &&
-                    (-pipe.pipeUpX.dp) + pipe.width >= gameObject.screenWidth / 2 - bird.width / 2 &&
-                    (-pipe.pipeUpX.dp) <= gameObject.screenWidth / 2 + bird.width / 2
-                ){
+                if (pipe.pipeUpHeight.value >= gameObject.screenHeight.value / 2 - bird.y.dp.value + 40 &&
+                    (-pipe.pipeUpX.dp) + pipe.width >= gameObject.screenWidth / 2 - bird.width + 40.dp / 2 &&
+                    (-pipe.pipeUpX.dp) <= gameObject.screenWidth / 2 + bird.width + 40.dp / 2
+                ) {
                     gameState = GameState.Over
                 }
 

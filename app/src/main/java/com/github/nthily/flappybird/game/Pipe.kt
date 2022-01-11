@@ -11,7 +11,7 @@ class Pipe(
     pipeDownHeight: Dp,
     pipeUpHeight: Dp
 ){
-    val width by mutableStateOf(60.dp)
+    val width by mutableStateOf(20.dp)
 
     var pipeDownX by mutableStateOf(width.value)
     var pipeDownY by mutableStateOf(0f)

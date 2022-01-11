@@ -3,6 +3,7 @@ package com.github.nthily.flappybird.uianother
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.navigation.fragment.NavHostFragment
 import com.github.nthily.flappybird.R
 
@@ -11,7 +12,10 @@ class baseMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_main)
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 // Remember that you should never show the action bar if the
 // status bar is hidden, so hide that too if necessary.
         actionBar?.hide()
