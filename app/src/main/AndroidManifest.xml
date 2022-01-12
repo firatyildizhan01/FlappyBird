@@ -8,10 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:screenOrientation="landscape"
         android:theme="@style/Theme.FlappyBird.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:exported="false"
+            android:screenOrientation="landscape"
             />
         <activity
             android:name=".uianother.baseMainActivity"

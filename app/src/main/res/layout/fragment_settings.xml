@@ -16,7 +16,8 @@
         android:textSize="35sp"
         android:textStyle="bold|italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/soundTextOn"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <TextView
         android:id="@+id/russianSoundText"
@@ -29,21 +30,24 @@
         android:textStyle="bold|italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/soundTextOn"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:freezesText="true"
+        />
 
-    <TextView
-        android:id="@+id/language"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="47dp"
-        android:text="@string/language"
-        android:textColor="#F8E64C"
-        android:textSize="35sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/soundTextOff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/soundTextOff"
-        android:visibility="visible"/>
+<!--    <TextView-->
+<!--        android:id="@+id/language"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="47dp"-->
+<!--        android:freezesText="true"-->
+<!--        android:text="@string/language"-->
+<!--        android:textColor="#F8E64C"-->
+<!--        android:textSize="35sp"-->
+<!--        android:textStyle="bold|italic"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/soundTextOff"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/soundTextOff" />-->
 
     <TextView
         android:id="@+id/russianLanguage"
@@ -58,7 +62,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/soundTextOff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/soundTextOff"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:freezesText="true"
+        />
 
     <TextView
         android:id="@+id/vibration"
@@ -165,18 +171,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="144dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soundTextOn"
         app:srcCompat="@drawable/englishflag" />
-
-
 
     <ImageView
         android:id="@+id/russianFlag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="416dp"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="4dp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/englishFlag"

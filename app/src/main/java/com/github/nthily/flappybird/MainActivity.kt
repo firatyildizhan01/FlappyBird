@@ -1,5 +1,7 @@
 package com.github.nthily.flappybird
 
+import android.content.Context
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
@@ -25,14 +27,22 @@ import com.github.nthily.flappybird.game.BirdState
 import com.github.nthily.flappybird.game.Game
 import com.github.nthily.flappybird.game.GameState
 import com.github.nthily.flappybird.ui.theme.FlappyBirdTheme
+import android.media.AudioManager
 
-class MainActivity : ComponentActivity() {
+import android.media.SoundPool
+
+
+
+
+open class MainActivity : ComponentActivity() {
     @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        val soundPool = SoundPool(5, AudioManager.STREAM_MUSIC, 0)
 
         setContent {
             FlappyBirdTheme {
@@ -47,7 +57,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
 @ExperimentalAnimationApi
 @Composable
 fun GameUI(game: Game){
@@ -58,11 +67,10 @@ fun GameUI(game: Game){
     LaunchedEffect(Unit) {
         while (true) {
             withFrameNanos {
-                game.update(it)
+          game.update(it)
             }
         }
     }
-
 
     val interactionSource = remember { MutableInteractionSource() }
 
@@ -76,13 +84,11 @@ fun GameUI(game: Game){
         tween(500)
     )
 
-
     if(game.gameState == GameState.Unstarted){
         if(unStartedAnimation == -25f) {
             game.birdState = BirdState.Jumping
         } else if(unStartedAnimation == 25f)game.birdState = BirdState.Falling
     }
-
 
     val birdPosition by animateFloatAsState(game.bird.y,
         tween(
@@ -169,7 +175,7 @@ fun GameUI(game: Game){
         contentAlignment = Alignment.Center
     ){
         Image(
-            painter = painterResource(id = R.drawable.bird),
+            painter = painterResource(id = R.drawable.yellowballpng),
             contentDescription = null,
             modifier = Modifier
                 .size(width = game.bird.width, height = game.bird.height)
@@ -187,5 +193,6 @@ fun GameUI(game: Game){
 
     Score(game)
     OverAlert(game)
+
 
 }

@@ -10,11 +10,9 @@ import com.github.nthily.flappybird.game.GameState
 @ExperimentalAnimationApi
 @Composable
 
-fun OverAlert(game: Game){
+fun OverAlert(game: Game) {
 
-
-
-    if(game.gameState == GameState.Over){
+    if (game.gameState == GameState.Over) {
         /*
         Box(
             modifier = Modifier.fillMaxSize(),
@@ -27,9 +25,7 @@ fun OverAlert(game: Game){
                 Text("Game Over")
             }
         }
-
          */
-
         AlertDialog(
             onDismissRequest = {
 
@@ -54,7 +50,7 @@ fun OverAlert(game: Game){
                     },
                 ) {
                     Text(
-                        "确认",
+                        "Replay",
                         fontWeight = FontWeight.W700,
                         style = MaterialTheme.typography.button
                     )

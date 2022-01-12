@@ -1,24 +1,31 @@
 package com.github.nthily.flappybird.game
 
+import android.media.MediaActionSound
+import android.media.MediaPlayer
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
+import com.github.nthily.flappybird.R
+import java.security.AccessController.getContext
 import java.util.*
 import kotlin.random.Random
 import kotlin.random.nextInt
+import android.media.SoundPool
+import com.github.nthily.flappybird.MainActivity
 
 
-enum class GameState{
+enum class GameState {
     Unstarted, Running, Over
 }
 
 class Game {
 
+    val soundPool = SoundPool.Builder().build()
+
     val gameObject = GameObject()
     val bird = Bird()
     val pipe by mutableStateOf<Queue<Pipe>>(LinkedList())
-
 
     var gameState by mutableStateOf(GameState.Unstarted)
 
@@ -26,10 +33,13 @@ class Game {
 
     var score by mutableStateOf(0)
 
-    fun update(time:Long){
+// soundId for reuse later on
 
-        if(gameState == GameState.Running){
-            when(birdState){
+
+    fun update(time: Long) {
+
+        if (gameState == GameState.Running) {
+            when (birdState) {
                 BirdState.Jumping -> {
                     bird.jump(gameObject.jumpDistance)
                     birdState = BirdState.Falling
@@ -49,6 +59,7 @@ class Game {
                     (-pipe.pipeDownX.dp) <= gameObject.screenWidth / 2 + bird.width + 40.dp / 2
                 ) {
                     gameState = GameState.Over
+
                 }
 
                 // Down layer detection
@@ -57,55 +68,59 @@ class Game {
                     (-pipe.pipeUpX.dp) <= gameObject.screenWidth / 2 + bird.width + 40.dp / 2
                 ) {
                     gameState = GameState.Over
+
                 }
 
                 // if the bird has reached the bottom
-                if(bird.y.dp - bird.height / 2  >= gameObject.screenHeight / 2) {
+                if (bird.y.dp - bird.height / 2 >= gameObject.screenHeight / 2) {
                     gameState = GameState.Over
                 }
 
                 // if the bird has crossed a pipe
-                if((-pipe.pipeDownX.dp) >= gameObject.screenWidth / 2 + bird.width && !pipe.isCounted){
+                if ((-pipe.pipeDownX.dp) >= gameObject.screenWidth / 2 + bird.width && !pipe.isCounted) {
                     pipe.isCounted = true
-                    score += 1
+                    score += 5
                     gameObject.requestAdd = true
                 }
 
             }
-            if(gameObject.requestAdd){
+            if (gameObject.requestAdd) {
                 addPipe()
                 gameObject.requestAdd = false
             }
         }
-        if(gameState == GameState.Over){
+        if (gameState == GameState.Over) {
             bird.y = gameObject.screenHeight.value / 2 - bird.height.value / 2
         }
 
     }
 
-    fun restartGame(){
+    fun restartGame() {
         gameState = GameState.Unstarted
         bird.y = 0f
         pipe.clear()
         score = 0
         addPipe()
     }
+
     private fun randomHeight(): Pair<Float, Float> {
 
-        var totalHeight = 0
+        var totalHeight = 100
 
-        if(gameObject.screenHeight != 0.dp) totalHeight = gameObject.screenHeight.value.toInt() - (bird.height.value * 4).toInt()
+        if (gameObject.screenHeight != 0.dp) totalHeight =
+            gameObject.screenHeight.value.toInt() - (bird.height.value * 4).toInt()
 
-        val value = Random.nextInt(0..totalHeight)
+        val value = Random.nextInt(90..totalHeight)
             .toFloat()
 
-        return Pair(value, totalHeight - value)
+        return Pair(value, totalHeight.toFloat() - value + 80)
     }
 
 
-    private fun addPipe(){
+    private fun addPipe() {
         val height = randomHeight()
         pipe.add(Pipe(height.first.dp, height.second.dp))
     }
+
 }
 

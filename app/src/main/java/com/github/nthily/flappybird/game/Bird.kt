@@ -42,8 +42,8 @@ class Bird {
 
     var x by mutableStateOf(0f)
     var y by mutableStateOf(0f)
-    var width by mutableStateOf(20.dp)
-    var height by mutableStateOf(20.dp)
+    var width by mutableStateOf(40.dp)
+    var height by mutableStateOf(40.dp)
 
     fun jump(distance: Float){
         y -= distance

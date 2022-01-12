@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/ic_start" />
 
     <ImageView
-        android:id="@+id/boardStroke"
+        android:id="@+id/textRussianStartFrame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/ic________stroke_" />
 
     <ImageView
-        android:id="@+id/russianStart"
+        android:id="@+id/textRussianStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
@@ -70,6 +70,20 @@
         app:layout_constraintVertical_bias="0.096"
         app:srcCompat="@drawable/ic_settings" />
 
+
+    <ImageView
+        android:id="@+id/settingsLanguage"
+        android:layout_width="93dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageLacross"
+        app:layout_constraintEnd_toEndOf="@+id/settings"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/settings"
+        app:layout_constraintTop_toBottomOf="@+id/settings"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_rectangle" />
+
     <ImageView
         android:id="@+id/russianSettings"
         android:layout_width="wrap_content"
@@ -83,7 +97,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.096"
         app:srcCompat="@drawable/ic_russiansettings" />
-
 
     <TextView
         android:id="@+id/aboutLacros"
@@ -114,11 +127,11 @@
         android:textColor="#F8E64C"
         android:textSize="18sp"
         android:textStyle="bold|italic"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/aboutlacross"
-        android:visibility="invisible"/>
+        app:srcCompat="@drawable/aboutlacross" />
 
 
     <ImageView
@@ -141,5 +154,27 @@
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/ic_horizontallacros" />
+
+    <ImageView
+        android:id="@+id/englishImageView"
+        android:layout_width="23dp"
+        android:layout_height="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/russianImageView"
+        app:layout_constraintEnd_toStartOf="@+id/russianImageView"
+        app:layout_constraintStart_toStartOf="@+id/settingsLanguage"
+        app:layout_constraintTop_toTopOf="@+id/russianImageView"
+        app:srcCompat="@drawable/englishflag" />
+
+    <ImageView
+        android:id="@+id/russianImageView"
+        android:layout_width="23dp"
+        android:layout_height="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsLanguage"
+        app:layout_constraintEnd_toEndOf="@+id/settingsLanguage"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="@+id/settingsLanguage"
+        app:layout_constraintTop_toTopOf="@+id/settingsLanguage"
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@drawable/russianflag" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
