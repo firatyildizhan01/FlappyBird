@@ -8,17 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:screenOrientation="landscape"
+        android:screenOrientation="sensorLandscape"
         android:theme="@style/Theme.SunsetLacross.NoActionBar">
         <activity
             android:name="com.sport.game.sunsetlacross.MainActivity"
             android:exported="false"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             />
         <activity
             android:name="com.sport.game.sunsetlacross.uianother.baseMainActivity"
             android:exported="true"
-            android:screenOrientation="landscape">
+            android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
