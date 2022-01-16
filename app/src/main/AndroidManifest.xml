@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.nthily.flappybird">
+    package="com.sport.game.sunsetlacross">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:screenOrientation="landscape"
-        android:theme="@style/Theme.FlappyBird.NoActionBar">
+        android:theme="@style/Theme.SunsetLacross.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name="com.sport.game.sunsetlacross.MainActivity"
             android:exported="false"
             android:screenOrientation="landscape"
             />
         <activity
-            android:name=".uianother.baseMainActivity"
+            android:name="com.sport.game.sunsetlacross.uianother.baseMainActivity"
             android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>
@@ -26,30 +26,4 @@
             </intent-filter>
         </activity>
     </application>
-
-
-    <!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/app_name"-->
-<!--            android:theme="@style/Theme.FlappyBird.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--    </application>-->
-<!--        <activity-->
-<!--            android:name=".uianother.baseMainActivity"-->
-<!--            android:exported="true"-->
-<!--            android:screenOrientation="landscape">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--    </application>-->
-
 </manifest>

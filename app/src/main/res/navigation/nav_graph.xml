@@ -6,7 +6,7 @@
     app:startDestination="@id/mainMenuFragment">
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.github.nthily.flappybird.uianother.AboutFragment"
+        android:name="com.sport.game.sunsetlacross.uianother.AboutFragment"
         android:label="AboutFragment" >
         <action
             android:id="@+id/action_aboutFragment_to_mainMenuFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="com.github.nthily.flappybird.uianother.MainMenuFragment"
+        android:name="com.sport.game.sunsetlacross.uianother.MainMenuFragment"
         android:label="MainMenuFragment" >
         <action
             android:id="@+id/action_mainMenuFragment_to_settingsFragment"
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.github.nthily.flappybird.uianother.SettingsFragment"
+        android:name="com.sport.game.sunsetlacross.uianother.SettingsFragment"
         android:label="SettingsFragment" >
         <action
             android:id="@+id/action_settingsFragment_to_mainMenuFragment"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/languageFragment"
-        android:name="com.github.nthily.flappybird.uianother.LanguageFragment"
+        android:name="com.sport.game.sunsetlacross.uianother.LanguageFragment"
         android:label="fragment_language"
         tools:layout="@layout/fragment_language" >
         <action
